@@ -6,6 +6,7 @@ import Welmess from './component/Welmess'
 import './App.css'
 import WelcomeForm from './component/welcomeform'
 import WelcomeMessage from './component/welcomemessage'
+import DocumentUpload from './component/Documentupload'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
             <Welmess />
             <WelcomeForm/>
             <WelcomeMessage/>
+            <DocumentUpload/>
           </div>
     </>
   )
