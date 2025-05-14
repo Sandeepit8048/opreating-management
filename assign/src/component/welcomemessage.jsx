@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import img from "../assets/Frame 2865.png";
 
 const WelcomeMessage = () => {
   const [messageType, setMessageType] = useState("regular");
-  const [mediaType, setMediaType] = useState("image");
+  const [mediaType, setMediaType] = useState(img);
   const [mediaUrl, setMediaUrl] = useState("https://unsplash.com/photos/people-sitting-at-the-table-");
   const [messageBody, setMessageBody] = useState("Hi {{1}}, please find details in attached pdf as discussed over call and click on demo link to explore demo. id :demo password : 1289\nThank You {{2}}");
   const [variables, setVariables] = useState([
