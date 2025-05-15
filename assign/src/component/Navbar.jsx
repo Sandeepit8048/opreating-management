@@ -12,13 +12,13 @@ function Navbar() {
           <NavLink to="/welcome" className="nav-link" activeClassName="active">Welcome Message</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/welcomeform" className="nav-link" activeClassName="active">welcomeform</NavLink>
+          <NavLink to="/welcomeform" className="nav-link" activeClassName="active">Welcome Form</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/Welmess" className="nav-link" activeClassName="active">Video</NavLink>
+          <NavLink to="/Welmess" className="nav-link" activeClassName="active">Text Message</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/Documentupload" className="nav-link" activeClassName="active">Documentupload</NavLink>
+          <NavLink to="/Documentupload" className="nav-link" activeClassName="active">Document Upload</NavLink>
         </li>
       </ul>
     </nav>

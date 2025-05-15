@@ -22,10 +22,9 @@ const OptInManagement = () => {
 
   return (
     <div className="container mt-5">
-      <h3 className="mb-4">Opt-In Management</h3>
       {/* Opt-in Section */}
       <div className="card p-4 mb-4 shadow">
-        <h5>Opt-in</h5>
+        <h5>Opt-In Management</h5>
         <p>A text that explains what opt-in is</p>
         <div className="form-check form-switch mb-3">
           <input
