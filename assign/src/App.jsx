@@ -1,27 +1,47 @@
-import { React} from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import OptInManagement from './component/OptInManagement'
-import Welmess from './component/Welmess'
-import './App.css'
-import WelcomeForm from './component/welcomeform'
-import WelcomeMessage from './component/welcomemessage'
-import DocumentUpload from './component/Documentupload'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './component/Navbar';
+import WelcomeMessage from './component/welcomemessage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import OptlnManagement from './component/OptInManagement';
+import WelcomeForm from './component/welcomeform';
+import Welmess from './component/Welmess';
+import Documentupload from './component/Documentupload';
 
-function App() {
 
+// function Management() {
+//   return <h2>Management Page</h2>;
+// }
 
-  return (
-    <>
-       <OptInManagement />
-          <div className="container mt-5">
-            <Welmess />
-            <WelcomeForm/>
-            <WelcomeMessage/>
-            <DocumentUpload/>
-          </div>
-    </>
-  )
+// function WelcomeMessage() {
+//   return <h2>Welcome Message Page</h2>;
+// }
+
+function Document() {
+  return <h2>Document Page</h2>;
 }
 
-export default App
+function Video() {
+  return <h2>Video Page</h2>;
+}
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <div className="container mt-4">
+        <Routes>
+          <Route path="/" element={<OptlnManagement/>} />
+          <Route path="/welcome" element={<WelcomeMessage />} />
+          <Route path="/welcomeform" element={<WelcomeForm />} />
+          <Route path="/Welmess" element={<Welmess />} />
+          <Route path="/Documentupload" element={<Documentupload />} />
+
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
