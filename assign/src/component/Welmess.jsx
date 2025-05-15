@@ -7,61 +7,61 @@ const Welmess = () => {
   const [contentType, setContentType] = useState("text");
   const [messageBody, setMessageBody] = useState("");
 
-  const handleSave = () => {
-    console.log("save clicked");
-  };
-
   return (
-    <div className="modal-dialog modal-lg shadow rounded-3 border p-4 bg-white">
-      <h5 className="fw-bold mb-4 text-primary">CONFIGURE WELCOME MESSAGE</h5>
+    <div className="modal-dialog modal-lg shadow border rounded-3 p-4 bg-white">
+      <div className="d-flex justify-content-between align-items-start mb-4">
+        <h5 className="fw-bold text-primary">CONFIGURE WELCOME MESSAGE</h5>
+        <button className="btn btn-sm btn-light border-0">
+          <i className="bi bi-x-lg"></i>
+        </button>
+      </div>
 
+      {/* Message Type */}
       <div className="mb-4">
         <label className="form-label fw-semibold">Select Message Type:</label>
         <div className="form-check">
           <input
-            className="form-check-input"
             type="radio"
-            name="messageType"
+            className="form-check-input"
             id="preApproved"
-            value="preapproved"
+            name="messageType"
             checked={messageType === "preapproved"}
             onChange={() => setMessageType("preapproved")}
           />
-          <label className="form-check-label" htmlFor="preApproved">
+          <label htmlFor="preApproved" className="form-check-label">
             Pre-approved template message
           </label>
         </div>
         <div className="form-check">
           <input
-            className="form-check-input"
             type="radio"
-            name="messageType"
+            className="form-check-input"
             id="regular"
-            value="regular"
+            name="messageType"
             checked={messageType === "regular"}
             onChange={() => setMessageType("regular")}
           />
-          <label className="form-check-label" htmlFor="regular">
+          <label htmlFor="regular" className="form-check-label">
             Regular message
           </label>
         </div>
       </div>
 
-      <div className="mb-3">
+      {/* Type */}
+      <div className="mb-4">
         <label className="form-label fw-semibold">Type:</label>
         <div className="d-flex gap-3">
           {["text", "image", "video", "document"].map((type) => (
             <div className="form-check" key={type}>
               <input
-                className="form-check-input"
                 type="radio"
-                name="contentType"
+                className="form-check-input"
                 id={type}
-                value={type}
+                name="contentType"
                 checked={contentType === type}
                 onChange={() => setContentType(type)}
               />
-              <label className="form-check-label text-capitalize" htmlFor={type}>
+              <label htmlFor={type} className="form-check-label text-capitalize">
                 {type}
               </label>
             </div>
@@ -69,48 +69,52 @@ const Welmess = () => {
         </div>
       </div>
 
-      <div className="mb-3">
+      {/* Message Body */}
+      <div className="mb-4">
         <label htmlFor="messageBody" className="form-label fw-semibold">
           Message Body <span className="text-danger">*</span>
         </label>
         <textarea
-          className="form-control"
           id="messageBody"
+          className="form-control"
           rows="4"
           maxLength={4096}
           placeholder="Enter your message here"
           value={messageBody}
           onChange={(e) => setMessageBody(e.target.value)}
-        />
-        <div className="d-flex justify-content-between mt-1">
+        ></textarea>
+        <div className="d-flex justify-content-between mt-2">
           <div>
-            <button className="btn btn-sm btn-light me-2 fw-bold">B</button>
-            <button className="btn btn-sm btn-light me-2 fst-italic">I</button>
-            <button className="btn btn-sm btn-light me-2 text-decoration-underline">U</button>
-            <button className="btn btn-sm btn-light">😊</button>
+            <button className="btn btn-sm btn-light fw-bold me-1">B</button>
+            <button className="btn btn-sm btn-light fst-italic me-1">I</button>
+            <button className="btn btn-sm btn-light text-decoration-underline me-1">U</button>
+            <button className="btn btn-sm btn-light"><i className="bi bi-emoji-smile"></i></button>
           </div>
           <small>{messageBody.length}/4096</small>
         </div>
       </div>
 
+      {/* WhatsApp Preview */}
       <div className="mb-4">
-        <div className="bg-light border rounded p-3 shadow-sm" style={{ maxWidth: "300px" }}>
+        <div className="border rounded shadow-sm p-3 bg-light" style={{ maxWidth: "350px" }}>
           <div className="mb-2">
-            <span className="badge bg-success me-2">
+            <span className="badge bg-success">
               <i className="bi bi-whatsapp"></i> WA
             </span>
           </div>
           <div className="text-muted" style={{ whiteSpace: "pre-wrap" }}>
-            Hi {`{1}`}, please find details in attached pdf as discussed over call and click on demo link to explore demo.  
+            Hi , please find details in attached pdf as discussed over call and click on demo link to explore demo.  
             id :demo password : 1289  
-            Thank You {`{2}`}
+            <br />
+            Thank You 
           </div>
         </div>
       </div>
 
+      {/* Buttons */}
       <div className="d-flex justify-content-end gap-2">
         <button className="btn btn-outline-secondary">Cancel</button>
-        <button className="btn btn-primary" onClick={handleSave}>Save</button>
+        <button className="btn btn-primary">Save</button>
       </div>
     </div>
   );

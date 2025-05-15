@@ -8,6 +8,9 @@ import OptlnManagement from './component/OptInManagement';
 import WelcomeForm from './component/welcomeform';
 import Welmess from './component/Welmess';
 import Documentupload from './component/Documentupload';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 
 // function Management() {
